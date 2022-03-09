@@ -34,7 +34,7 @@ jobs:
           port: ${{ secrets.PROD_PORT }}
           script: |
             cd sasnovacat08
-            git pull origin develop
+            git pull origin main
             docker-compose stop sasnovacat08
             docker-compose rm -f sasnovacat08
             docker image rm sasnovacat08
