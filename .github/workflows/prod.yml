@@ -1,0 +1,41 @@
+name: prod
+
+on: 
+  push: 
+    branches: 
+      - main
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v2
+
+      - name: "Install Node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: "Install dependencies"
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+      
+      - name: Deploy Vps
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_KEY }}
+          port: ${{ secrets.PROD_PORT }}
+          script: |
+            cd sasnovacat08
+            git pull origin develop
+            docker-compose stop sasnovacat08
+            docker-compose rm -f sasnovacat08
+            docker image rm sasnovacat08
+            docker-compose up --build -d sasnovacat08

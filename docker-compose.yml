@@ -1,0 +1,10 @@
+version: '3.19'
+services:
+  sasnovacat08:
+    build: .
+    image: sasnovacat08
+    command: npm run start
+    environment:
+      - NUXT_HOST=0.0.0.0
+    ports:
+      - "1101:3000"
