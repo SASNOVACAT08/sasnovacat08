@@ -52,6 +52,6 @@ export default class SwiperVertical extends Vue {
   height: 100%;
 }
 .swiper-pagination-bullet {
-  background-color: #fff;
+  background-color: #fff !important;
 }
 </style>

@@ -6,7 +6,7 @@
         <br>
         Je suis développeur web
         <br>
-        particulièrement JS & TS
+        spécialisé en JS & TS
         <br>
         sur Paris.
       </h3>
