@@ -10,15 +10,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import SwiperVertical from '../components/Swiper/SwiperVertical.vue'
-import Snow from '@/components/Snow.vue'
 
-@Component({
-  components: {
-    Snow,
-    SwiperVertical
-  }
-})
+@Component
 export default class IndexPage extends Vue {}
 </script>
 
