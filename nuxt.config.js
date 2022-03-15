@@ -1,14 +1,14 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Ruben Barros | Développeur Web',
+    title: 'Ruben Barros | Développeur Web | JS & TS | Paris',
     htmlAttrs: {
       lang: 'fr'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Bonjour, je suis Ruben Barros, développeur web ...' },
+      { hid: 'description', name: 'description', content: 'Bonjour, je suis Ruben Barros, développeur web spécialisé en javascript et typescript sur Paris en France' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -53,6 +53,44 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
+  ],
+
+  sitemap: {
+    hostname: 'https://rubenbarros.fr',
+    path: '/sitemap.xml',
+    gzip: true
+  },
+
+  robots: [
+    {
+      Sitemap: 'https://rubenbarros.fr/sitemap.xml'
+    },
+    {
+      UserAgent: '*',
+      Disallow: '/'
+    },
+    {
+      UserAgent: 'Googlebot',
+      Allow: '/'
+    },
+    {
+      UserAgent: 'Bingbot',
+      Allow: '/'
+    },
+    {
+      UserAgent: 'Slurp',
+      Allow: '/'
+    },
+    {
+      UserAgent: 'Baiduspider',
+      Allow: '/'
+    },
+    {
+      UserAgent: 'DuckDuckBot',
+      Allow: '/'
+    }
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
